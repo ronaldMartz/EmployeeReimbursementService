@@ -47,4 +47,17 @@ git clone https://github.com/ronaldMartz/EmployeeReimbursementService.git
 
 ## Usage
 
+When the program starts you should see https://github.com/ronaldMartz/EmployeeReimbursementService/blob/main/Images/Login.png which requests the user's email and password.
+When user logs in as an Employee they would see https://github.com/ronaldMartz/EmployeeReimbursementService/blob/main/Images/HomePage.png
+Managers would see the same page with additional information for reviewing reimbursements and all employees.
+Clicking the "Home" link returns the user back to this main page.
+Clicking the "Information" link takes the user to an Employee Information page: https://github.com/ronaldMartz/EmployeeReimbursementService/blob/main/Images/EmployeeInfo.png
+Clicking the "Reimbursements" link takes the user to the submission form to submit a new request: https://github.com/ronaldMartz/EmployeeReimbursementService/blob/main/Images/SubmitRequest.png
+Clicking the "Logout" link takes the user back to the index, login page.
 
+As a Manager you would then see "Review," "Employees," and "Register."
+The "Review" link would take you to https://github.com/ronaldMartz/EmployeeReimbursementService/blob/main/Images/RequestHistory.png
+- This would be where I would have implemented the apply or deny options for the Manager to select.
+The "Employees" link would take you to https://github.com/ronaldMartz/EmployeeReimbursementService/blob/main/Images/AllEmployee.png
+- This is where you would see a list of all employees, be able to update information, and remove employees.
+The "Register" link would take you to a page for registering a new employee.
