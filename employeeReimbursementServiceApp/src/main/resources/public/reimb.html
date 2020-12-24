@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Reimbursement History</h2>
+    <div>
+        <p><a href="/ers/submitReimb.html">Submit Reimbursement</a></p>
+        <div>
+            <table>
+                <thead>
+                    <tr id="managerView">
+                        <td>Request ID</td>
+                        <td>Request Date</td>
+                        <td>Employee First Name</td>
+                        <td>Employee Last Name</td>
+                        <td>Request Amount</td>
+                        <td>Reason</td>
+                        <td>Resolution</td>
+                    </tr>
+                </thead>
+                <tbody id="reimbInfo">
+
+                </tbody>
+            </table>
+        </div>
+        <a href = "home.html">Home</a>
+    </div>
+    <script>
+        const requestInfo = document.querySelector('#reimbInfo');
+        const manager_view = document.querySelector('#managerView');
+        let isManager;
+
+        const fetchIsManager = async() => {
+            let response = await fetch('/ers/info')
+            return await response.json();
+        }
+        const responseManager = async () =>{
+            let result = await fetchIsManager();
+            isManager = result.body.is_manager;
+
+            console.log("Is manager = " + isManager);
+            //If Manager - run search for all, if not run search for employee specific.
+            if(isManager===false){
+                const fetchedRequest = async () => {
+                let response = await fetch('/ers/reimb');
+                return await response.json();
+                }
+                const renderRequest = async () => {
+                    let request = await fetchedRequest();
+                    
+                    
+                    //This Loop will go through the request response and create a cell for every entry, substituting 'Pending' for null values.
+                    for(i = 0; i < request.length; i++)
+                    {
+                        
+                        let newLine = document.createElement('tr');
+                        newLine.innerHTML = '';
+
+                        let requestID = document.createElement('td');
+                        requestID.innerText = request[i].request_id;
+                        
+                        let requestDate = document.createElement('td');
+                        requestDate.innerText = request[i].request_date;
+                        
+                        let empFirstName = document.createElement('td');
+                        empFirstName.innerText = request[i].requesting_id.first_name;
+                        
+                        let empLastName = document.createElement('td');
+                        empLastName.innerText = request[i].requesting_id.last_name;
+                        
+                        let requestAmount = document.createElement('td');
+                        requestAmount.innerText = request[i].request_amount;
+                        
+                        let reason = document.createElement('td');
+                        reason.innerText = request[i].reason;
+                        
+                        let resolution = document.createElement('td');
+                        resolution.innerText = request[i].resolution;
+                        
+                        requestInfo.append(newLine, requestID, requestDate, empFirstName, empLastName, requestAmount, reason, resolution);
+                    }
+                    
+                }
+
+                renderRequest();
+            }
+            else{
+                let resolutionNotesHeader = document.createElement('td');
+                resolutionNotesHeader.innerText = "Resolution Notes";
+                let managerFirstNameHeader = document.createElement('td');
+                managerFirstNameHeader.innerText = "Manager First Name";
+                let managerLastNameHeader = document.createElement('td');
+                managerLastNameHeader.innerText = "Manager Last Name";
+                let resolutionDateHeader = document.createElement('td');
+                resolutionDateHeader.innerText = "Resolution Date";
+
+                manager_view.append(resolutionNotesHeader, managerFirstNameHeader, managerLastNameHeader, resolutionDateHeader);
+
+                const fetchedRequest = async () => {
+                let response = await fetch('/ers/allReimb');
+                return await response.json();
+                }
+                const renderRequest = async () => {
+                    let request = await fetchedRequest();
+                    
+                    
+                    //This Loop will go through the request response and create a cell for every entry, substituting 'Pending' for null values.
+                    for(i = 0; i < request.length; i++)
+                    {
+                        
+                        let newLine = document.createElement('tr');
+                        newLine.innerHTML = '';
+
+                        let requestID = document.createElement('td');
+                        requestID.innerText = request[i].request_id;
+                        
+                        let requestDate = document.createElement('td');
+                        requestDate.innerText = request[i].request_date;
+                        
+                        let empFirstName = document.createElement('td');
+                        empFirstName.innerText = request[i].requesting_id.first_name;
+
+                        let empLastName = document.createElement('td');
+                        empLastName.innerText = request[i].requesting_id.last_name;
+                        
+                        let requestAmount = document.createElement('td');
+                        requestAmount.innerText = request[i].request_amount;
+                        
+                        let reason = document.createElement('td');
+                        reason.innerText = request[i].reason;
+                        
+                        let resolution = document.createElement('td');
+                        resolution.innerText = request[i].resolution;
+                        
+                        let resolutionNotes = document.createElement('td');
+                        if(request[i].resolution_notes === null){
+                            resolutionNotes.innerText = 'Pending';
+                        }
+                        else{
+                            resolutionNotes.innerText = request[i].resolution_notes;
+                        }
+
+                        let manFirstName = document.createElement('td');
+                        let manLastName = document.createElement('td');
+                        if(request[i].resolved_by === null){    
+                            manFirstName.innerText = 'Pending';
+                            manLastName.innerText = 'Pending';
+                        }
+                        else{
+                            manFirstName.innerText = request[i].resolved_by.first_name;
+                            manLastName.innerText = request[i].resolved_by.last_name;
+                        }
+                        
+                        let resolutionDate = document.createElement('td');
+                        if(request[i].resolution_date === null){
+                            resolutionDate.innerText = 'Pending';
+                        }
+                        else{
+                            resolutionDate.innerText = request[i].resolution_date;
+                        }
+
+                        requestInfo.append(newLine, requestID, requestDate, empFirstName, empLastName, requestAmount, reason, resolution, resolutionNotes, manFirstName, manLastName, resolutionDate);
+                    }
+                }
+                renderRequest();
+            }
+        }
+        responseManager();
+    </script>
+</body>
+</html>

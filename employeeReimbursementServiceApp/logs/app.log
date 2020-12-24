@@ -1,0 +1,72 @@
+2020-12-04 00:31:27,461 INFO p.c.EmployeeController [qtp15334809-13] Reached the ShowEmployee handler.
+2020-12-04 01:57:23,654 INFO p.c.LoginController [qtp15334809-58] Authentication successful
+2020-12-04 01:58:52,861 INFO p.c.LoginController [qtp23717841-16] Invalid email or password.
+2020-12-04 03:44:59,967 INFO p.c.LoginController [qtp23717841-13] Authentication successful
+2020-12-04 04:24:05,733 INFO p.c.LoginController [qtp23717841-39] Authentication successful
+2020-12-04 04:25:14,904 INFO p.c.LoginController [qtp23717841-16] Authentication successful
+2020-12-04 04:33:59,469 INFO p.c.LoginController [main] Authentication successful
+2020-12-04 04:34:44,290 INFO p.c.LoginController [main] Authentication successful
+2020-12-04 04:34:58,806 INFO p.c.LoginController [main] Authentication successful
+2020-12-04 04:38:09,243 INFO p.c.LoginController [main] Invalid email or password.
+2020-12-04 04:39:03,718 INFO p.c.LoginController [main] Missing information in Login.
+2020-12-04 04:39:28,293 INFO p.c.LoginController [main] Authentication successful
+2020-12-04 04:39:29,045 INFO p.c.LoginController [main] Missing information in Login.
+2020-12-04 04:39:31,473 INFO p.c.LoginController [main] Invalid email or password.
+2020-12-04 04:44:38,372 INFO p.c.LoginController [main] Authentication successful
+2020-12-04 04:44:39,123 INFO p.c.LoginController [main] Missing information in Login.
+2020-12-04 04:44:41,536 INFO p.c.LoginController [main] Invalid email or password.
+2020-12-04 04:45:32,595 INFO p.c.LoginController [qtp23717841-47] Authentication successful
+2020-12-04 04:58:48,747 INFO p.c.LoginController [main] Authentication successful
+2020-12-04 04:58:50,209 INFO p.c.LoginController [main] Missing information in Login.
+2020-12-04 04:58:52,576 INFO p.c.LoginController [main] Invalid email or password.
+2020-12-04 05:01:06,280 INFO p.c.LoginController [main] Authentication successful
+2020-12-04 05:01:07,036 INFO p.c.LoginController [main] Missing information in Login.
+2020-12-04 05:01:09,597 INFO p.c.LoginController [main] Invalid email or password.
+2020-12-04 05:01:24,630 INFO p.c.LoginController [main] Authentication successful
+2020-12-04 05:01:25,373 INFO p.c.LoginController [main] Missing information in Login.
+2020-12-04 05:01:27,789 INFO p.c.LoginController [main] Invalid email or password.
+2020-12-04 05:01:59,228 INFO p.c.EmployeeController [main] Reached the ShowEmployee handler.
+2020-12-04 05:02:04,840 INFO p.c.EmployeeController [main] Reached the ShowEmployee handler.
+2020-12-04 05:06:32,491 INFO p.c.EmployeeController [main] Reached the ShowEmployee handler.
+2020-12-04 05:06:43,431 INFO p.c.ManagerController [main] Attempting to parse EmployeeTable
+2020-12-04 05:07:52,548 INFO p.c.ManagerController [main] Attempting to parse EmployeeTable
+2020-12-04 05:13:26,400 INFO p.c.ManagerController [main] Attempting to parse EmployeeTable
+2020-12-04 05:33:10,337 INFO p.c.EmployeeController [main] Reached the ShowEmployee handler.
+2020-12-04 05:33:13,824 INFO p.c.LoginController [main] Authentication successful
+2020-12-04 05:33:14,578 INFO p.c.LoginController [main] Missing information in Login.
+2020-12-04 05:33:16,971 INFO p.c.LoginController [main] Invalid email or password.
+2020-12-04 05:54:31,719 INFO p.c.LoginController [qtp23717841-52] Authentication successful
+2020-12-04 05:54:34,505 INFO p.c.EmployeeController [qtp23717841-52] Reached the ShowEmployee handler.
+2020-12-04 05:54:39,247 INFO p.c.EmployeeController [qtp23717841-52] Reached the ShowEmployee handler.
+2020-12-04 05:54:48,094 INFO p.c.ManagerController [qtp23717841-51] Attempting to parse EmployeeTable
+2020-12-04 05:55:17,877 INFO p.c.LoginController [qtp23717841-41] Authentication successful
+2020-12-04 05:55:24,116 INFO p.c.EmployeeController [qtp23717841-41] Reached the ShowEmployee handler.
+2020-12-04 05:55:27,821 INFO p.c.EmployeeController [qtp23717841-40] Reached the ShowEmployee handler.
+2020-12-04 05:55:27,828 INFO p.c.DatabaseController [qtp23717841-52] Communicated with View Reimbursements handler with first name: Michael
+2020-12-04 05:59:57,410 INFO p.c.LoginController [qtp31913804-17] Authentication successful
+2020-12-04 05:59:59,244 INFO p.c.ManagerController [qtp31913804-26] Attempting to parse EmployeeTable
+2020-12-04 06:00:16,363 INFO p.c.EmployeeController [qtp31913804-17] Reached the ShowEmployee handler.
+2020-12-04 06:00:36,450 INFO p.c.EmployeeController [qtp31913804-17] Reached the ShowEmployee handler.
+2020-12-04 09:47:06,843 INFO p.c.EmployeeController [main] Reached the ShowEmployee handler.
+2020-12-04 09:47:10,513 INFO p.c.LoginController [main] Authentication successful
+2020-12-04 09:47:11,267 INFO p.c.LoginController [main] Missing information in Login.
+2020-12-04 09:47:13,727 INFO p.c.LoginController [main] Invalid email or password.
+2020-12-04 09:47:52,729 INFO p.c.EmployeeController [main] Reached the ShowEmployee handler.
+2020-12-04 09:47:56,256 INFO p.c.LoginController [main] Authentication successful
+2020-12-04 09:47:56,994 INFO p.c.LoginController [main] Missing information in Login.
+2020-12-04 09:47:59,403 INFO p.c.LoginController [main] Invalid email or password.
+2020-12-04 10:01:56,175 INFO p.c.EmployeeController [main] Reached the ShowEmployee handler.
+2020-12-04 10:01:59,918 INFO p.c.LoginController [main] Authentication successful
+2020-12-04 10:02:00,653 INFO p.c.LoginController [main] Missing information in Login.
+2020-12-04 10:02:03,122 INFO p.c.LoginController [main] Invalid email or password.
+2020-12-04 10:02:27,559 INFO p.c.LoginController [qtp31913804-34] Authentication successful
+2020-12-04 10:02:51,989 INFO p.c.EmployeeController [qtp31913804-33] Reached the ShowEmployee handler.
+2020-12-04 10:03:02,443 INFO p.c.EmployeeController [qtp31913804-18] Reached the ShowEmployee handler.
+2020-12-04 10:03:02,448 INFO p.c.DatabaseController [qtp31913804-34] Communicated with View Reimbursements handler with first name: Michael
+2020-12-04 10:03:22,626 INFO p.c.EmployeeController [qtp31913804-34] Reached the ShowEmployee handler.
+2020-12-04 10:03:22,630 INFO p.c.DatabaseController [qtp31913804-18] Communicated with View Reimbursements handler with first name: Michael
+2020-12-04 10:03:41,474 INFO p.c.LoginController [qtp31913804-36] Authentication successful
+2020-12-04 10:03:46,901 INFO p.c.ManagerController [qtp31913804-36] Attempting to parse EmployeeTable
+2020-12-04 10:03:54,032 INFO p.c.EmployeeController [qtp31913804-36] Reached the ShowEmployee handler.
+2020-12-04 10:03:56,337 INFO p.c.EmployeeController [qtp31913804-36] Reached the ShowEmployee handler.
+2020-12-04 10:05:16,328 INFO p.c.LoginController [qtp31913804-26] Missing information in Login.

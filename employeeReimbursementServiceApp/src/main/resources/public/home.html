@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome back <span id="first_name"></span></h1>
+    </div>
+    <div>
+        <p><a href='home.html'>Home</a></p>
+        <p><a href='info.html'>Information</a></p>
+        <p><a href='reimb.html'>Reimbursements</a></p>
+        <div id="manager"></div>
+        <p><a href='index.html'>Logout</a></p>
+    </div>
+    <script>
+        const firstName = document.querySelector('#first_name');
+        const manager = document.querySelector('#manager');
+
+        const fetchedEmployee = async () => {
+            const response = await fetch('/ers/home');
+            console.log(response);
+            return await response.json();
+        }
+
+        const renderEmployee = async () =>{
+            let employee = await fetchedEmployee();
+            console.log(employee);
+
+            firstName.innerHTML = employee.body.first_name;
+            if(employee.body.is_manager === true){
+                let reviewTag = document.createElement('p');
+                reviewTag.textContent = 'Review';
+                let employeeTag = document.createElement('a');
+                employeeTag.setAttribute('href', "allEmployees.html")
+                employeeTag.textContent = 'Employees';
+                // let employeeLink = document.createElement('a');
+                
+                // employeeTag.append(employeeLink);
+                let registerTag = document.createElement('p');
+                registerTag.textContent = 'Register';
+
+                manager.append(reviewTag, employeeTag, registerTag)
+            }
+        }
+
+        renderEmployee();
+    </script>
+</body>
+</html>

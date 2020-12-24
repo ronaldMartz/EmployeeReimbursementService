@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Employee Information: </h2>
+    <div>
+        <h4>First Name: </h4><span id="firstName"></span>
+        <h4>Last Name: </h4><span id="lastName"></span>
+        <h4>Email: </h4><span id="email"></span>
+        <h4>Phone: </h4><span id="phone"></span>
+    </div>
+    <div>
+        <!-- create a form button to load the update info page. -->
+    </div>
+    <div>
+        <a href="home.html">Home</a>
+    </div>
+    <script>
+
+        console.log("loaded script");
+        const first_name = document.querySelector('#firstName');
+        const last_name = document.querySelector('#lastName');
+        const email_tag = document.querySelector('#email');
+        const phone_number = document.querySelector('#phone');
+
+        const fetchedEmployee = async () => {
+            console.log("Running FetchedEmployee");
+            const response = await fetch('http://localhost:8080/ers/info');
+            return await response.json();
+        }
+
+        const renderEmployee = async () =>{
+            let employee = await fetchedEmployee();
+
+            first_name.innerHTML =employee.body.first_name;
+            last_name.innerHTML =employee.body.last_name;
+            email_tag.innerHTML =employee.body.email;
+            phone_number.innerHTML =employee.body.phone_number;
+        }
+
+        renderEmployee();
+    </script>
+</body>
+</html>

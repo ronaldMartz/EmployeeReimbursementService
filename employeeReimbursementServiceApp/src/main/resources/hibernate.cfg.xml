@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//en"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--        configure the datasource
+                    we do not hardcode for live environment
+                    information here is generic for h2. populate with proper database information
+                    update URL, USERNAME, PASSWORD to allow for use of postgres-->
+        <property name="hibernate.connection.url">jdbc:postgresql://java1120-project1.ciyllvfazvu9.us-east-2.rds.amazonaws.com:5432/postgres</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">password</property>
+
+        <!--        driver spec
+                    Update the driver for postgres-->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+
+        <!--        make things nice-->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!--        Mappings-->
+        <mapping class = "project1.models.EmployeeTable"/>
+        <mapping class = "project1.models.ReimbursementTable"/>
+    </session-factory>
+</hibernate-configuration>

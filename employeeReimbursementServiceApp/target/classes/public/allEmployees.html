@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>All Employees</h2>
+    </div>
+    <div>
+        <div>
+            <table>
+                <thead>
+                    <td>Employee ID</td>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Email Address</td>
+                    <td>Phone Number</td>
+                    <td>Manager?</td>
+                </thead>
+                <tbody id="empInfo">
+
+                </tbody>
+            </table>
+        </div>
+        <a href = "home.html">Home</a>
+    </div>
+    <script>
+        const employee = document.querySelector("#empInfo");
+
+        const fetchedRequest = async () => {
+            let response = await fetch('/ers/allEmployees');
+            return await response.json();
+        }
+
+        const renderRequest = async () => {
+            let employeeInfo = await fetchedRequest();
+
+            console.log(employeeInfo)
+
+            for(i = 0 ; i < employeeInfo.length ; i++){
+                console.log(employeeInfo[i]);
+                let newLine = document.createElement('tr');
+                newLine.innerHTML = '';
+
+                let empID = document.createElement('td');
+                empID.innerText = employeeInfo[i].id;
+
+                let firstName = document.createElement('td');
+                firstName.innerText = employeeInfo[i].first_name;
+
+                let lastName = document.createElement('td');
+                lastName.innerText = employeeInfo[i].last_name;
+
+                let email = document.createElement('td');
+                email.innerText = employeeInfo[i].email;
+
+                let phoneNumber = document.createElement('td');
+                phoneNumber.innerText = employeeInfo[i].phone_number;
+
+                let isManager = document.createElement('td');
+                isManager.innerText = employeeInfo[i].is_manager;
+
+                employee.append(newLine, empID, firstName, lastName, email, phoneNumber, isManager);
+            }
+        }
+
+        renderRequest();
+    </script>
+</body>
+</html>
